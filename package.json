@@ -1,0 +1,56 @@
+{
+  "name": "medical-data-sharing",
+  "version": "1.0.1",
+  "description": "medical data sharing project to send the medical data of patient during emergencies, operational procedures",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "concurrently \"nodemon index.js\" \"cd capstoneFrontend && npm run start\"",
+    "heroku-postbuild": "cd capstoneFrontend && npm install --only=dev && npm install && npm run build",
+    "test": "jest mocha chai "
+  },
+  "keywords": [
+    "npm",
+    "npm",
+    "run",
+    "install",
+    "nodemon",
+    "docker",
+    "npm",
+    "start"
+  ],
+  "git repository": "https://github.com/ameyadeokule/MediShare",
+  "author": "Aditya N",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "aws-sdk": "^2.835.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cucumber": "^7.0.0-rc.0",
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "fs": "0.0.1-security",
+    "html-pdf": "^2.2.0",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.4.18",
+    "nodemailer-mailgun-transport": "^2.0.2",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "shortid": "^2.2.16",
+    "webview": "^1.0.0"
+  },
+  "engines": {
+    "node": "12.18.2"
+  }
+}
