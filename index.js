@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(express.static(path.join(__dirname, "capstoneFrontend", "build")));
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "capstoneFrontend", "build", "index.html"));
 });
 
