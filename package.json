@@ -19,8 +19,8 @@
     "npm",
     "start"
   ],
-  "git repository": "https://github.com/ameyadeokule/MediShare",
-  "author": "Aditya N",
+  "git repository": "https://github.com/prajapatilalit/deployed-medishare",
+  "author": "Lalit kumar",
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.0",
