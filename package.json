@@ -4,7 +4,7 @@
   "description": "medical data sharing project to send the medical data of patient during emergencies, operational procedures",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "dev": "concurrently \"nodemon index.js\" \"cd capstoneFrontend && npm run start\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix capstoneFrontend && npm run build --prefix capstoneFrontend",
     "test": "jest mocha chai "
