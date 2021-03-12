@@ -25,13 +25,19 @@ app.use((req, res, next) => {
   next();
 });
 
-const PORT = process.env.PORT || 8000;
+// const PORT = process.env.PORT || 8000;
 
-app.use(express.static(path.join(__dirname, "capstoneFrontend", "build")));
+// app.use(express.static(path.join(__dirname, "capstoneFrontend", "build")));
 
+<<<<<<< HEAD
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "capstoneFrontend", "build", "index.html"));
 });
+=======
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "capstoneFrontend", "build", "index.html"));
+// });
+>>>>>>> c3bd82d02b764f2ca89aba35d74c3cff82241909
 
 app.listen(PORT, () => console.log(`The server has started on port: ${PORT}`));
 
@@ -69,6 +75,19 @@ app.use("/users", usersRouter);
 app.use("/catalog", catalogRouter);
 
 app.use("/api", hospRouter);
+
+if(process.env.NODE_ENV === 'production')
+{
+app.use(express.static(path.join(__dirname, '/capstoneFrontend/build')))
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, 'capstoneFrontend', 'build', 'index.html'));
+});
+} else {
+ app.get('/', (req, res) => {
+    res.send('API running')
+  })
+}
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -59,7 +59,7 @@ export const pat_dets = (pats) => {
   console.log(t.token);
   console.log(pats);
   console.log(JSON.stringify(pats));
-  return fetch(`http://localhost:8000/catalog/patients/create`, {
+  return fetch(`${API}/catalog/patients/create`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -73,7 +73,7 @@ export const pat_dets = (pats) => {
 };
 
 export const getPatDetails = (id) => {
-  return fetch(`http://localhost:8000/catalog/patients/${id}`, {
+  return fetch(`${API}/catalog/patients/${id}`, {
     method: "GET",
   })
     .then((response) => {
@@ -83,7 +83,7 @@ export const getPatDetails = (id) => {
 };
 
 export const updatePatDetails = (body, id) => {
-  return fetch(`http://localhost:8000/catalog/patients/${id}/update`, {
+  return fetch(`${API}/catalog/patients/${id}/update`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -96,7 +96,7 @@ export const updatePatDetails = (body, id) => {
 };
 
 export const getAllPatientDetails = () => {
-  return fetch(`http://localhost:8000/catalog/patients`, {
+  return fetch(`${API}/catalog/patients`, {
     method: "GET",
   })
     .then((response) => {
@@ -107,7 +107,7 @@ export const getAllPatientDetails = () => {
 
 export const uploadPatientReport = (file) => {
   console.log(JSON.stringify(file));
-  return fetch("http://localhost:8000/catalog/doctors/uploadReport", {
+  return fetch(`${API}/catalog/doctors/uploadReport`, {
     method: "POST",
     headers: {
       Accept: "multipart/form-data",
@@ -123,7 +123,7 @@ export const uploadPatientReport = (file) => {
 
 // export const uploadPrescription = (data) => {
 //   console.log(JSON.stringify(file))
-//   return fetch("http://localhost:8000/catalog/doctors/uploadReport" , {
+//   return fetch("https://medicaldatashareapp.herokuapp.com/catalog/doctors/uploadReport" , {
 //     method : "POST",
 //     headers : {
 //       Accept : "application/json",
@@ -136,7 +136,7 @@ export const uploadPatientReport = (file) => {
 
 export const addPrescription = (data) => {
   console.log(data);
-  return fetch("http://localhost:8000/catalog/patients/prescriptions/create", {
+  return fetch(`${API}/catalog/patients/prescriptions/create`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -151,7 +151,7 @@ export const addPrescription = (data) => {
 };
 
 export const getPres = (id) => {
-  return fetch(`http://localhost:8000/catalog/patient/${id}/pres`, {
+  return fetch(`${API}/catalog/patient/${id}/pres`, {
     method: "GET",
   })
     .then((response) => {
@@ -162,7 +162,7 @@ export const getPres = (id) => {
 
 export const addGraphValues = (data) => {
   console.log(data);
-  return fetch("http://localhost:8000/catalog/doctor/create/graph", {
+  return fetch(`${API}/catalog/doctor/create/graph`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -177,7 +177,7 @@ export const addGraphValues = (data) => {
 };
 
 export const getPatGraph = (id) => {
-  return fetch(`http://localhost:8000/catalog/patient/${id}/graphvalues`, {
+  return fetch(`${API}/catalog/patient/${id}/graphvalues`, {
     method: "GET",
   })
     .then((response) => {
@@ -187,7 +187,7 @@ export const getPatGraph = (id) => {
 };
 
 export const allHospitals = () => {
-  return fetch(`http://localhost:8000/api/getAllHospitals`, {
+  return fetch(`${API}/api/getAllHospitals`, {
     method: "GET",
   })
     .then((response) => {
@@ -196,6 +196,7 @@ export const allHospitals = () => {
     .catch((err) => console.log(err));
 };
 
+<<<<<<< HEAD
 export const nearHospitals = (lat, long, radius) => {
   return fetch(
     `http://localhost:8000/api/getHospital/${lat}/${long}/${radius}`,
@@ -203,6 +204,14 @@ export const nearHospitals = (lat, long, radius) => {
       method: "GET",
     }
   )
+=======
+}
+
+export const nearHospitals = (lat,long,radius) => {
+  return fetch(`${API}/api/getHospital/${lat}/${long}/${radius}`, {
+    method: "GET",
+  })
+>>>>>>> c3bd82d02b764f2ca89aba35d74c3cff82241909
     .then((response) => {
       return response.json();
     })
