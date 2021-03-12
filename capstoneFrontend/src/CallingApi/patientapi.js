@@ -196,22 +196,13 @@ export const allHospitals = () => {
     .catch((err) => console.log(err));
 };
 
-<<<<<<< HEAD
-export const nearHospitals = (lat, long, radius) => {
-  return fetch(
-    `http://localhost:8000/api/getHospital/${lat}/${long}/${radius}`,
-    {
-      method: "GET",
-    }
-  )
-=======
-}
+
 
 export const nearHospitals = (lat,long,radius) => {
   return fetch(`${API}/api/getHospital/${lat}/${long}/${radius}`, {
     method: "GET",
   })
->>>>>>> c3bd82d02b764f2ca89aba35d74c3cff82241909
+
     .then((response) => {
       return response.json();
     })
