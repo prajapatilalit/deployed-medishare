@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "concurrently \"nodemon index.js\" \"cd capstoneFrontend && npm run start\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix capstoneFrontend && npm run build --prefix capstoneFrontend",
+    "heroku-postbuild": "cd capstoneFrontend && npm install --only=dev && npm install && npm run build",
     "test": "jest mocha chai "
   },
   "keywords": [
