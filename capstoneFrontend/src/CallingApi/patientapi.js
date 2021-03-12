@@ -59,7 +59,7 @@ export const pat_dets = (pats) => {
   console.log(t.token);
   console.log(pats);
   console.log(JSON.stringify(pats));
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patients/create`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patients/create`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -73,7 +73,7 @@ export const pat_dets = (pats) => {
 };
 
 export const getPatDetails = (id) => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patients/${id}`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patients/${id}`, {
     method: "GET",
   })
     .then((response) => {
@@ -83,7 +83,7 @@ export const getPatDetails = (id) => {
 };
 
 export const updatePatDetails = (body, id) => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patients/${id}/update`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patients/${id}/update`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -96,7 +96,7 @@ export const updatePatDetails = (body, id) => {
 };
 
 export const getAllPatientDetails = () => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patients`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patients`, {
     method: "GET",
   })
     .then((response) => {
@@ -107,7 +107,7 @@ export const getAllPatientDetails = () => {
 
 export const uploadPatientReport = (file) => {
   console.log(JSON.stringify(file));
-  return fetch("https://git.heroku.com/medicaldatashareapp.git/catalog/doctors/uploadReport", {
+  return fetch("https://medicaldatashareapp.herokuapp.com/catalog/doctors/uploadReport", {
     method: "POST",
     headers: {
       Accept: "multipart/form-data",
@@ -123,7 +123,7 @@ export const uploadPatientReport = (file) => {
 
 // export const uploadPrescription = (data) => {
 //   console.log(JSON.stringify(file))
-//   return fetch("http://localhost:8000/catalog/doctors/uploadReport" , {
+//   return fetch("https://medicaldatashareapp.herokuapp.com/catalog/doctors/uploadReport" , {
 //     method : "POST",
 //     headers : {
 //       Accept : "application/json",
@@ -136,7 +136,7 @@ export const uploadPatientReport = (file) => {
 
 export const addPrescription = (data) => {
   console.log(data);
-  return fetch("https://git.heroku.com/medicaldatashareapp.git/catalog/patients/prescriptions/create", {
+  return fetch("https://medicaldatashareapp.herokuapp.com/catalog/patients/prescriptions/create", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -151,7 +151,7 @@ export const addPrescription = (data) => {
 };
 
 export const getPres = (id) => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patient/${id}/pres`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patient/${id}/pres`, {
     method: "GET",
   })
     .then((response) => {
@@ -162,7 +162,7 @@ export const getPres = (id) => {
 
 export const addGraphValues = (data) => {
   console.log(data);
-  return fetch("https://git.heroku.com/medicaldatashareapp.git/catalog/doctor/create/graph", {
+  return fetch("https://medicaldatashareapp.herokuapp.com/catalog/doctor/create/graph", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -177,7 +177,7 @@ export const addGraphValues = (data) => {
 };
 
 export const getPatGraph = (id) => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/catalog/patient/${id}/graphvalues`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/catalog/patient/${id}/graphvalues`, {
     method: "GET",
   })
     .then((response) => {
@@ -187,7 +187,7 @@ export const getPatGraph = (id) => {
 };
 
 export const allHospitals = () => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/api/getAllHospitals`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/api/getAllHospitals`, {
     method: "GET",
   })
     .then((response) => {
@@ -198,7 +198,7 @@ export const allHospitals = () => {
 }
 
 export const nearHospitals = (lat,long,radius) => {
-  return fetch(`https://git.heroku.com/medicaldatashareapp.git/api/getHospital/${lat}/${long}/${radius}`, {
+  return fetch(`https://medicaldatashareapp.herokuapp.com/api/getHospital/${lat}/${long}/${radius}`, {
     method: "GET",
   })
     .then((response) => {
